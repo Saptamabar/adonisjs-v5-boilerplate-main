@@ -28,10 +28,4 @@ export default Env.rules({
 	SMTP_PASSWORD: Env.schema.string(),
 	GOOGLE_CLIENT_ID: Env.schema.string(),
 	GOOGLE_CLIENT_SECRET: Env.schema.string(),
-  MINIO_ENDPOINT: Env.schema.string({ format: 'host' }),
-  MINIO_PORT: Env.schema.number(),
-  MINIO_USE_SSL: Env.schema.boolean(),
-  MINIO_ACCESS_KEY: Env.schema.string(),
-  MINIO_SECRET_KEY: Env.schema.string(),
-  MINIO_BUCKET: Env.schema.string(),
 })

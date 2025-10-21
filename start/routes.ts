@@ -57,22 +57,3 @@ Route.get('/api', async ({ response }) => {
 })
 
 Route.on('*').render('index')
-
-Route.group(function () {
-  if (fs.existsSync(`${__dirname}/routes`)) {
-    const folders = fs.readdirSync(`${__dirname}/routes`)
-    folders.map((folder) => {
-      if (folder !== 'auth' && folder !== 'file') {
-        const files = fs.readdirSync(`${__dirname}/routes/${folder}`)
-        files.map((file) => {
-          if (!file.includes('.map')) {
-            require(`${__dirname}/routes/${folder}/${file}`)
-          }
-        })
-      }
-    })
-    if (fs.existsSync(`${__dirname}/routes/file`)) {
-        require(`${__dirname}/routes/file/file.ts`)
-    }
-  }
-}).prefix('api')
